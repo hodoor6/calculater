@@ -23,6 +23,7 @@ class Calculator
 
     public function calc($data)
     {
+        //отработка метода из valid из класа validator
         if ($this->validtor->is_valid($data)) {
 
             //вычетание
