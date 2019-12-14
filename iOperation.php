@@ -11,6 +11,6 @@ interface iOperation
     public function is_applicable($whatSing);
 //
 //метод сalcylate (принимать параметрами масив знаков операций и строку)
-public function сalcylate($arrayString, $string);
+public function calculate($arrayString, $string);
 
 }
