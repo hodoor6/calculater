@@ -1,13 +1,29 @@
 <?php
 include 'html/header.php';
+include 'ExpressionValidator.php';
+
 
 class Calculator
 
+
+
 {
+
+    public $validtor;
+
+
+    public function __construct()   {
+        $this->validtor = new ExpressionValidator;
+    }
+
+
+
+
+
 
     public function calc($data)
     {
-        if ($this->correctInput($data)) {
+        if ($this->validtor->is_valid($data)) {
 
             //вычетание
             $this->Subtraction($data);
@@ -80,15 +96,6 @@ class Calculator
 
     private function correctInput($data)
     {
-        if (trim($data) or !empty($data)) {
-            if (preg_match('#^[\d\s*/+.()_-]+$#si', $data)) {
-                return $data;
-            } else {
-                echo 'Ведите числовые данные букви некорректны для калькулятора';
-            }
-        } else {
-            echo 'Введите данные для подсчета на калькуляторе пример 1+1';
-        }
 
     }
 
